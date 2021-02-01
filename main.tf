@@ -182,7 +182,7 @@ resource "aws_security_group" "bastion_sg" {
 
 
 
-# Launch configuartion and ASG for bastion
+# configuartion and ASG for bastion
 
 resource "aws_launch_configuration" "bastion_lc" {
   name_prefix   = "terraform-bastion-"
@@ -430,6 +430,16 @@ resource "aws_launch_configuration" "lc" {
   instance_type = t2.micro
   key_name      = var.key_name
   security_groups = ["${aws_security_group.app_server_sg.id}"]
+	
+	
+  ebs_block_device = [
+    {
+      device_name           = "/dev/xvdz"
+      volume_type           = "gp2"
+      volume_size           = "50"
+      delete_on_termination = true
+    },
+  ]
 
   lifecycle {
     create_before_destroy = true
