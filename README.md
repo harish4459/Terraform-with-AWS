@@ -41,16 +41,16 @@ module "vpc" {
 ```
 
 # Variables
-* region - Region of the VPC (default: us-west-1)
-* Key_name - EC2 Key pair name for the bastion
-* cidr_block - CIDR block for the VPC (default: 10.0.0.0/16)
-* public_subnet_cidr_block1 -  public subnet CIDR block (default: "10.0.1.0/24")
-* public_subnet_cidr_block2 -  public subnet CIDR block (default: "10.0.2.0/24")
-* private_subnet_cidr_block1 - private subnet CIDR block (default:"10.0.3.0/24")
-* private_subnet_cidr_block2 - private subnet CIDR block (default:"10.0.4.0/24")
-* availability_zones - List of availability zones (default: ["us-west-1a", "us-west-1b"])
-* bastion_ami - Bastion Amazon Machine Image (AMI) ID
-* bastion_ssh_from = From which ip you want ssh to bastion (default: 127.0.0.1)
-* public1_nat_ip = Reserved NAT ip
-* public2_nat_ip = Reserved Nat ip
+* `region` - Region of the VPC (default: us-west-1)
+* `Key_name` - EC2 Key pair name for the bastion
+* `cidr_block` - CIDR block for the VPC (default: 10.0.0.0/16)
+* `public_subnet_cidr_block1` -  public subnet CIDR block (default: "10.0.1.0/24")
+* `public_subnet_cidr_block2` -  public subnet CIDR block (default: "10.0.2.0/24")
+* `private_subnet_cidr_block1` - private subnet CIDR block (default:"10.0.3.0/24")
+* `private_subnet_cidr_block2` - private subnet CIDR block (default:"10.0.4.0/24")
+* `availability_zones` - List of availability zones (default: ["us-west-1a", "us-west-1b"])
+* `bastion_ami` - Bastion Amazon Machine Image (AMI) ID
+* `bastion_ssh_from` = From which ip you want ssh to bastion (default: 127.0.0.1)
+* `public1_nat_ip` = Reserved NAT ip
+* `public2_nat_ip` = Reserved Nat ip
 
