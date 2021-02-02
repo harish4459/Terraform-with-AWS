@@ -17,6 +17,7 @@ ASG
 
 # Example usage:
 
+```
 module "vpc" {
   source = "github.com/harish4459/Terraform-with-AWS"
 
@@ -34,6 +35,7 @@ module "vpc" {
   project = "Something"
   environment = "Staging"
 }
+```
 
 # Variables
 name - Name of the VPC (default: Default)
