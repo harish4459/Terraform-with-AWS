@@ -68,3 +68,12 @@ variable "bastion_image"{
   default = "ami-01e24be29428c15b2"
 
 }
+
+variable "public1_nat_ip"{
+  type = string
+}
+
+variable "public2_nat_ip"{
+  type = string
+}
+
