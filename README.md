@@ -52,5 +52,5 @@ module "vpc" {
 * `bastion_ami` - Bastion Amazon Machine Image (AMI) ID
 * `bastion_ssh_from` = From which ip you want ssh to bastion (default: 127.0.0.1)
 * `public1_nat_ip` = Reserved NAT ip
-* `public2_nat_ip` = Reserved Nat ip
+* `public2_nat_ip` = Reserved NAT ip
 
