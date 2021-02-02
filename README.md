@@ -19,7 +19,7 @@ This module creates a VPC alongside a variety of related resources, including:
 # Example usage:
 
 ```
-module "vpc" {
+module "web_app" {
   source = "github.com/harish4459/Terraform-with-AWS"
 
   aws_access_key = "******************"
