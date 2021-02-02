@@ -6,6 +6,7 @@ This module creates a VPC alongside a variety of related resources, including:
 
 * Public and private subnets
 * Public and private route tables
+* Security groups for App,Bastion instances
 * Elastic IPs
 * NAT Gateways
 * An Internet Gateway
@@ -21,30 +22,35 @@ This module creates a VPC alongside a variety of related resources, including:
 module "vpc" {
   source = "github.com/harish4459/Terraform-with-AWS"
 
-  name = "Default"
-  region = "us-east-1"
-  key_name = "hector"
+  aws_access_key = "******************"
+  aws_secret_key = "*******************"
+  region = "us-west-1"
+  key_name = "terraform"
   cidr_block = "10.0.0.0/16"
-  private_subnet_cidr_blocks = ["10.0.1.0/24", "10.0.3.0/24"]
-  public_subnet_cidr_blocks = ["10.0.0.0/24", "10.0.2.0/24"]
-  availability_zones = ["us-east-1a", "us-east-1b"]
+  private_subnet_cidr_block1 = "10.0.3.0/24"
+  private_subnet_cidr_block2 = "10.0.4.0/24"
+  public_subnet_cidr_block1 = "10.0.1.0/24"
+  public_subnet_cidr_block2 = "10.0.2.0/24"
+  availability_zones = ["us-west-1a", "us-west-1b"]
   bastion_ami = "ami-6869aa05"
-  bastion_ebs_optimized = true
-  bastion_instance_type = "t3.micro"
+  bastion_ssh_from = "127.0.0.1"
+  public1_nat_ip = "******"
+  public2_nat_ip = "******"
 
-  project = "Something"
-  environment = "Staging"
 }
 ```
 
 # Variables
-* name - Name of the VPC (default: Default)
-* region - Region of the VPC (default: us-east-1)
+* region - Region of the VPC (default: us-west-1)
 * Key_name - EC2 Key pair name for the bastion
 * cidr_block - CIDR block for the VPC (default: 10.0.0.0/16)
-* public_subnet_cidr_blocks - List of public subnet CIDR blocks (default: ["10.0.0.0/24","10.0.2.0/24"])
-* private_subnet_cidr_blocks - List of private subnet CIDR blocks (default: ["10.0.1.0/24", "10.0.3.0/24"])
-* availability_zones - List of availability zones (default: ["us-east-1a", "us-east-1b"])
+* public_subnet_cidr_block1 -  public subnet CIDR block (default: "10.0.1.0/24")
+* public_subnet_cidr_block2 -  public subnet CIDR block (default: "10.0.2.0/24")
+* private_subnet_cidr_block1 - private subnet CIDR block (default:"10.0.3.0/24")
+* private_subnet_cidr_block2 - private subnet CIDR block (default:"10.0.4.0/24")
+* availability_zones - List of availability zones (default: ["us-west-1a", "us-west-1b"])
 * bastion_ami - Bastion Amazon Machine Image (AMI) ID
-* bastion_ebs_optimized - If true, the bastion instance will be EBS-optimized (default: false)
-* bastion_instance_type - Instance type for bastion instance (default: t3.nano)
+* bastion_ssh_from = From which ip you want ssh to bastion (default: 127.0.0.1)
+* public1_nat_ip = Reserved NAT ip
+* public2_nat_ip = Reserved Nat ip
+
