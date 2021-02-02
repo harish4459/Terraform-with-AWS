@@ -1,7 +1,7 @@
 # Terraform-with-AWS
 A Terraform module to create an web app in AWS using VPC,EC2,LC,ASG.
 
-Usage
+# Usage
 This module creates a VPC alongside a variety of related resources, including:
 
 Public and private subnets
@@ -15,7 +15,7 @@ Launch configurations with Ec2 Instaces with EBS volumes with Nginx webapp insta
 ASG 
 
 
-Example usage:
+# Example usage:
 
 module "vpc" {
   source = "github.com/harish4459/Terraform-with-AWS"
@@ -35,10 +35,8 @@ module "vpc" {
   environment = "Staging"
 }
 
-#Variables
+# Variables
 name - Name of the VPC (default: Default)
-project - Name of project this VPC is meant to house (default: Unknown)
-environment - Name of environment this VPC is targeting (default: Unknown)
 region - Region of the VPC (default: us-east-1)
 key_name - EC2 Key pair name for the bastion
 cidr_block - CIDR block for the VPC (default: 10.0.0.0/16)
